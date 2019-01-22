@@ -42,11 +42,10 @@ const binarySearch = (array, target) => {
 	let beginningVal = 0
 	let endVal = array.length -1
 
-	while( array[beginningVal] !== array[endVal] ) {
+	while( endVal > 1  ) {
 
-		console.log(middleVal, beginningVal, endVal)
 
-		middleVal = Math.floor( (endVal - beginningVal) / 2)
+		middleVal = Math.floor( (endVal / 2))
 
 		if (target === array[beginningVal] || 
 			target === array[middleVal] || 
@@ -63,6 +62,9 @@ const binarySearch = (array, target) => {
 			endVal = middleVal
 		}
 
+		middleVal = Math.floor( (endVal - beginningVal) / 2)
+
+		console.log(target, beginningVal, middleVal, endVal)
 
 	}
 
